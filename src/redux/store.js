@@ -1,6 +1,7 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
 
-import eventSlice from './eventSlice';
+import eventSlice from './events/eventSlice';
+import participantSlice from './participants/participantsSlice';
 
 import { persistStore, 
     persistReducer,
@@ -15,6 +16,7 @@ import { persistStore,
 
   const rootReducer = combineReducers({
     events: eventSlice.reducer,
+    participants: participantSlice.reducer,
   })
 
   const persistConfig = {

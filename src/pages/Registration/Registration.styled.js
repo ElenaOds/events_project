@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Form } from 'formik';
+import { Form, Field, ErrorMessage } from 'formik';
 
 export const Container = styled.div`
     padding: 16px;
@@ -40,13 +40,126 @@ export const StyledForm = styled(Form)`
     max-width: 560px;
     margin: 0 auto;
 
+
 @media screen and (min-width: 768px) {
     gap: 16px;
-    padding: 16px;
+    padding: 20px 16px;
 }
 
 @media screen and (min-width: 1280px) {
-    gap: 12px;
-    padding: 16px;   
+    gap: 18px;
+    padding: 32px 16px;
 }
 `
+
+const text = `
+    font-weight: 400;
+    font-size: 12px;
+    color: var(--text-color);
+  
+    @media screen and (min-width: 768px) {
+        font-size: 14px;
+    }
+
+    @media screen and (min-width: 1280px) {
+        font-size: 16px;    
+    }
+`;
+
+export const Label = styled.label`
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    & > span {
+        ${text}
+        margin-bottom: 8px;
+    }  
+`;
+
+
+export const RadioBtnGroup = styled.label`
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    justify-items: center;
+`
+
+export const Text = styled.p`
+    ${text}
+    grid-column: 1 / 4;
+    grid-row:  1 / 2;
+    justify-self: left;
+`;
+
+export const RadioBtn = styled.span`
+    ${text}
+    margin-left: 8px;
+`
+
+export const Input = styled(Field)`
+ appearance: none;
+-moz-appearance: none;
+-webkit-appearance: none;
+  padding: 8px 12px;
+  height: 100%;
+  ${text}
+  border-radius: 8px;
+  outline: none;
+  border: 1px solid ${({ error }) => 
+   error
+  ? 'var(--high-color)'
+  : 'var(--divider-color)'};
+  margin-bottom: ${({  error  }) => 
+  error
+  ? '4px'
+  : '20px'};
+
+  &::placeholder {
+    ${text}
+    color: var(--divider-color);
+  }
+
+  &:hover,
+  &:focus {
+    border: 1px solid ${({ error }) => 
+     error
+    ? 'var(--high-color)'
+    : 'var(--orange-color)'};
+  }
+`
+
+
+export const StyledError = styled(ErrorMessage)`
+    ${text}
+    color: var(--high-color);
+    text-align: right;
+
+`;
+
+
+export const Button = styled.button`
+  display: block;
+  text-align: center;
+  justify-content: center;
+  width: 180px;
+  height: 40px;
+  background-color: var(--orange-color);
+  border: none;
+  padding: 8px;
+  ${text}
+  color: var(--add-text-color);
+  border-radius: 8px;
+  cursor: pointer;
+  justify-self: center;
+
+
+&:hover {
+  background-color: var(--text-color);
+}
+
+&:disabled {
+  background-color: var(--divider-color);
+  cursor: not-allowed;
+}
+`;

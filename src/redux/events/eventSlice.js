@@ -1,7 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { getEvents,
-     createRegistration 
-    } from './eventOperations';
+import { getEvents } from './eventOperations';
 
 const eventSlice = createSlice({
     name: "events",
@@ -19,17 +17,6 @@ const eventSlice = createSlice({
         state.isLoading = false;
       })
       .addCase(getEvents.rejected, (state, _) => {
-        state.isLoading = false;
-      })
-    
-      .addCase(createRegistration.pending, (state, _) => {
-        state.isLoading = true;
-      })
-      .addCase(createRegistration.fulfilled, (state, action) => {
-       state.data = [...state.data, action.payload];
-        state.isLoading = false;
-      })
-      .addCase(createRegistration.rejected, (state, _) => {
         state.isLoading = false;
       })
     

@@ -13,7 +13,7 @@ function App() {
       <Route path='/' element={<Layout/>}>
         <Route index element={<Navigate to='events'/>}/>
         <Route path='events' element={<Events/>}/>
-        <Route path='events/:_id/registration' element={<Registration/>}/>
+        <Route path='events/:_id/registration' element={<Registration/>}/> 
         <Route path='events/:_id/participants' element={<Participants/>}/> 
         </Route> 
      

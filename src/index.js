@@ -12,12 +12,13 @@ import 'react-toastify/dist/ReactToastify.css';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-     <Provider store={store}> 
-    <PersistGate loading={null} persistor={persistor}>
+    <Provider store={store}>  
+     <PersistGate loading={null} persistor={persistor}>
+    
     <BrowserRouter basename="events_project">
     <App />
     </BrowserRouter>
-    </PersistGate>
-    </Provider> 
+    </PersistGate> 
+     </Provider> 
   </React.StrictMode>
 );
