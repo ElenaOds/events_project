@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { Form, Field, ErrorMessage } from 'formik';
 
 export const Container = styled.div`
     padding: 16px;
@@ -30,7 +29,7 @@ export const SectionTitle = styled.h2`
     }
 `
 
-export const StyledForm = styled(Form)`
+export const StyledForm = styled.form`
     padding: 10px;
     border-radius: 8px;
     background-color: var(--add-bg-color);
@@ -78,11 +77,17 @@ export const Label = styled.label`
 `;
 
 
-export const RadioBtnGroup = styled.label`
+export const RadioBtnGroup = styled.div`
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 8px;
+    gap: 12px 8px;
     justify-items: center;
+`
+export const RadioError = styled.div`
+    grid-column: 2 / 4;
+    grid-row:  3 / 4;
+    justify-self: right;
+    color: var(--high-color);
 `
 
 export const Text = styled.p`
@@ -97,7 +102,7 @@ export const RadioBtn = styled.span`
     margin-left: 8px;
 `
 
-export const Input = styled(Field)`
+export const Input = styled.input`
  appearance: none;
 -moz-appearance: none;
 -webkit-appearance: none;
@@ -106,14 +111,19 @@ export const Input = styled(Field)`
   ${text}
   border-radius: 8px;
   outline: none;
-  border: 1px solid ${({ error }) => 
-   error
-  ? 'var(--high-color)'
-  : 'var(--divider-color)'};
-  margin-bottom: ${({  error  }) => 
-  error
-  ? '4px'
-  : '20px'};
+  border: 1px solid ${({touched, error }) => 
+    touched && error 
+   ? 'var(--high-color)'
+   : 'var(--divider-color)'};
+ 
+
+  margin-bottom: ${({  touched, error  }) => 
+    touched && error 
+    ? '4px'
+    : '20px'};
+  
+
+
 
   &::placeholder {
     ${text}
@@ -122,19 +132,18 @@ export const Input = styled(Field)`
 
   &:hover,
   &:focus {
-    border: 1px solid ${({ error }) => 
-     error
+    border: 1px solid ${({ touched, error }) => 
+    touched && error
     ? 'var(--high-color)'
     : 'var(--orange-color)'};
   }
 `
 
 
-export const StyledError = styled(ErrorMessage)`
+export const StyledError = styled.div`
     ${text}
     color: var(--high-color);
     text-align: right;
-
 `;
 
 

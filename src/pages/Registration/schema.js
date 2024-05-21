@@ -1,12 +1,10 @@
-import * as yup from 'yup';
+import * as Yup from 'yup';
 
-const format = /^[A-Za-zА-Яа-яЁёІіЇїЄє '-]+$/;
-
-const ValidationSchema = yup.object({
-    name: yup.string().matches(format, 'Only letters are allowed').min(3, 'Name should not be shorter than 3 characters').max(25, 'Name should not be longer than 25 characters').required('Please type your full name'),
-    email: yup.string().email().required('Please type your email'),
-    date: yup.date().required('Please type or select date of birth'),
-    info: yup.string().oneOf(['social media', 'friends', 'found myself'], 'Please select the option').required(),
+const validationSchema = Yup.object({
+    name: Yup.string().required('Name is required'),
+    email: Yup.string().email('Invalid email address').required('Email is required'),
+    birthdate: Yup.date().required('Birth date is required'),
+    info: Yup.string().oneOf(['social media', 'friends', 'found myself'], 'Please select the option').required('Please select the option'),
   });
 
-  export default ValidationSchema;
+  export default validationSchema;

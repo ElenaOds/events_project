@@ -15,15 +15,29 @@ import { toast } from 'react-toastify';
   });
 
 
-  export const getRegistration = createAsyncThunk(
-    'participants/create', 
-    async (_id, newParticipant, thunkAPI) => {
-      try {
-        const { data } = await setRegistration(_id, newParticipant);
-        return data;
-      } catch (error) {
-        console.error('Error fetching participants:', error);
-        toast.error('Participants cannot be displayed');
-        return thunkAPI.rejectWithValue(error.message);
-      }
-    });
+  // export const getRegistration = createAsyncThunk(
+  //   'participants/addParticipant', 
+  //   async (_id, newParticipant, thunkAPI) => {
+  //     try {
+  //       const { data } = await setRegistration(_id, newParticipant);
+  //       return data;
+  //     } catch (error) {
+  //       console.error('Error fetching participants:', error);
+  //       toast.error('Participants cannot be added');
+  //       return thunkAPI.rejectWithValue(error.message);
+  //     }
+  //   });
+
+    export const getRegistration = createAsyncThunk(
+      'participants/addParticipant', 
+      async (payload, thunkAPI) => {
+        const { _id, newParticipant } = payload;
+        try {
+          const { data } = await setRegistration(_id, newParticipant);
+          return data;
+        } catch (error) {
+          console.error('Error adding participants:', error);
+          toast.error('Participants cannot be added');
+          return thunkAPI.rejectWithValue(error.message);
+        }
+      });

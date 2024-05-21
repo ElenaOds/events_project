@@ -15,7 +15,6 @@ const Participants = () => {
   const event = events.find(event => event._id === _id);
  const participants = useSelector((state) => state.participants.list);
 
-
   useEffect(() => {
     dispatch(getParticipants(_id));
   }, [dispatch, _id]);
@@ -34,7 +33,7 @@ const Participants = () => {
         <StyledLink to={`/events/${event._id}/registration`} id={event._id}>Register</StyledLink>
         </Wrapper>
       ) : (
-       participants.map(participant => {
+        participants.map(participant => {
     
     return (
       <Card key={participant._id} id={participant._id}>

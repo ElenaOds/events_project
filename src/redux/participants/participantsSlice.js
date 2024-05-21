@@ -14,7 +14,6 @@ const participantSlice = createSlice({
       })
       .addCase(getParticipants.fulfilled, (state, action) => {
         state.list = [...action.payload.participants];
-     
         state.isLoading = false;
       })
       .addCase(getParticipants.rejected, (state, _) => {
@@ -25,6 +24,7 @@ const participantSlice = createSlice({
       })
       .addCase(getRegistration.fulfilled, (state, action) => {
         state.list.push(action.payload);
+        // state.list = [...state.list, action.payload.participants];
         state.isLoading = false;
       })
       .addCase(getRegistration.rejected, (state, _) => {
