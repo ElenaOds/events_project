@@ -111,14 +111,15 @@ export const Input = styled.input`
   ${text}
   border-radius: 8px;
   outline: none;
-  border: 1px solid ${({touched, error }) => 
+    border: 1px solid ${({ touched, error }) =>
     touched && error 
-   ? 'var(--high-color)'
+   ? 'var(--high-color)' 
    : 'var(--divider-color)'};
  
 
+
   margin-bottom: ${({  touched, error  }) => 
-    touched && error 
+    touched && error
     ? '4px'
     : '20px'};
   
