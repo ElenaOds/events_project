@@ -6,9 +6,11 @@ import Header from '../Header/Header';
 import Loader from '../Loader/Loader';
 import Footer from '../Footer/Footer';
 
+import { App } from './Layout.styled';
+
 const Layout = () => {
   return (
-    <>
+    <App>
     <Header/>
     <main>
     <Suspense fallback={<Loader/>}>
@@ -17,7 +19,7 @@ const Layout = () => {
     <ToastContainer autoClose={3000} theme="colored"/>
     </main>
     <Footer/>
-    </>
+    </App>
   )
 }
 

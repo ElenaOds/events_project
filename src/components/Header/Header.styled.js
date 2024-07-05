@@ -5,7 +5,7 @@ export const StyledHeader = styled.header`
     padding: 12px 16px;
     border-bottom: 1px solid var(--orange-color);
 
-    @media screen and (min-width: 1768px) {
+    @media screen and (min-width: 768px) {
         padding: 12px 18px; 
     }
 
@@ -23,7 +23,7 @@ export const Title = styled.h1`
     font-size: 18px;
     color: var(--orange-color);
 
-    @media screen and (min-width: 1768px) {
+    @media screen and (min-width: 768px) {
         font-size: 22px;
     }
 

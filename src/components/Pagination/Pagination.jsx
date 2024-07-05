@@ -1,10 +1,8 @@
 import { PaginationWrapper, PageBtn, PageNumBtn } from './Pagination.styled';
 
 const Pagination = ({page, handleClickNext,  handleClickPrevoius, handlePageSet, totalEvents, eventsPerPage}) => {
-    const activePage = page ? page : 1;
+    const activePage = page || 1;
     const totalPages = Math.ceil(totalEvents / eventsPerPage);
-    console.log(page)
-    console.log('activepage', activePage)
 
     const pages = Array.from({length: totalPages}, (_, index) => index + 1);
 

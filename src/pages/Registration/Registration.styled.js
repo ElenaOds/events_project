@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Container = styled.div`
     padding: 16px;
 
-    @media screen and (min-width: 1768px) {
+    @media screen and (min-width: 768px) {
         padding: 18px; 
     }
 
@@ -18,7 +18,7 @@ export const SectionTitle = styled.h2`
     color: var(--text-color);
     margin-bottom: 16px;
 
-    @media screen and (min-width: 1768px) {
+    @media screen and (min-width: 768px) {
         font-size: 20px;
         margin-bottom: 18px;
     }

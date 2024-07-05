@@ -24,7 +24,6 @@ const participantSlice = createSlice({
       })
       .addCase(getRegistration.fulfilled, (state, action) => {
         state.list.push(action.payload);
-        // state.list = [...state.list, action.payload.participants];
         state.isLoading = false;
       })
       .addCase(getRegistration.rejected, (state, _) => {

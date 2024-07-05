@@ -37,7 +37,6 @@ const Registration = () => {
   });
 
 
-
   const backLinkHref = location.state?.from ?? "/events";
 
   return (

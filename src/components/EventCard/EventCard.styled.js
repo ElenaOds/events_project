@@ -41,7 +41,7 @@ export const CardTitle = styled.h3`
     grid-row: 1 / 2;
     color: var(--orange-color);
 
-    @media screen and (min-width: 1768px) {
+    @media screen and (min-width: 768px) {
         font-size: 18px;
     }
 

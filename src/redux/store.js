@@ -2,6 +2,7 @@ import { configureStore, combineReducers } from '@reduxjs/toolkit';
 
 import eventSlice from './events/eventSlice';
 import participantSlice from './participants/participantsSlice';
+import filterSlice from './filterSlice';
 
 import { persistStore, 
     persistReducer,
@@ -17,6 +18,7 @@ import { persistStore,
   const rootReducer = combineReducers({
     events: eventSlice.reducer,
     participants: participantSlice.reducer,
+    filter: filterSlice.reducer,
   })
 
   const persistConfig = {

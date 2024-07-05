@@ -5,9 +5,7 @@ const Header = () => {
     <StyledHeader>
       <StyledLink to={`/events`}>
       <Title>Events</Title>
-
       </StyledLink>
-     
     </StyledHeader>
   )
 }

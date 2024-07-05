@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 
 export const Container = styled.div`
     padding: 16px;
-
-    @media screen and (min-width: 1768px) {
+    
+    @media screen and (min-width: 768px) {
         padding: 18px; 
     }
 
@@ -20,7 +20,7 @@ export const SectionTitle = styled.h2`
     color: var(--text-color);
     margin-bottom: 16px;
 
-    @media screen and (min-width: 1768px) {
+    @media screen and (min-width: 768px) {
         font-size: 20px;
         margin-bottom: 18px;
     }
@@ -143,4 +143,20 @@ border-radius: 5px;
  background: var(--orange-color);
  outline: none;
 }
+`
+
+export const FilterWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+
+    @media screen and (min-width: 768px) {
+       flex-direction: row;
+       justify-content: space-between;
+       margin-bottom: 18px;
+    }
+
+    @media screen and (min-width: 1280px) {
+        margin-bottom: 20px;
+    }
 `
